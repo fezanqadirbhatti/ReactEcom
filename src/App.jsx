@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./styles.css";
 import Cookies from "js-cookie";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Authentication from "./components/Auth/Authentication";
@@ -16,10 +15,10 @@ export default function App() {
 
   return (
     <>
+      <Header />
+      <Nav />
       {accessToken ? (
         <>
-          <Header />
-          <Nav />
           <Routes>
             <Route path="/" element={<AdminDashboard />} />
             <Route path="/home" element={<AdminDashboard />} />
@@ -39,6 +38,7 @@ export default function App() {
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       )}
+      <Footer />
     </>
   );
 }

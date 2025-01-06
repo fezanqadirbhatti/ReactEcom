@@ -1,20 +1,514 @@
-#root {
-  font-family: sans-serif;
-  width: 100%;
-  
-}
-body{
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
+/* Login */
+.login-form {
+  margin: 50px auto;
+  max-width: 400px;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.login-form{
-  margin: 0 auto;
-  width:35%;
-  padding: 1rem;
-  margin-top: 50px;
+.login-form h2 {
+  font-size: x-large;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-.login-form button:hover{
- background-color: #000;
+
+.custom-label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #6c757d;
 }
+
+.custom-input {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 4px rgba(0, 123, 255, 0.5);
+}
+
+.custom-input.is-invalid {
+  border-color: #dc3545;
+}
+
+.custom-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.custom-btn:active {
+  background-color: #004085;
+  transform: translateY(0);
+}
+
+.text-muted {
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.text-muted:hover {
+  color: #007bff;
+}
+
+/* Demo Users Section */
+.demo-users {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.demo-users .demo-toggle {
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.demo-credentials {
+  margin-top: 10px;
+}
+
+.demo-credentials .list-group-item {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background: #fff;
+}
+
+.demo-users .fa-copy {
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.demo-users .fa-copy:hover {
+  color: #0056b3;
+}
+
+.toast {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .login-form {
+    padding: 1.5rem;
+    margin: 30px auto;
+  }
+
+  .custom-input {
+    font-size: 13px;
+  }
+
+  .custom-btn {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .demo-credentials .list-group-item {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.nav-item.shoppingCart {
+  font-size: x-large;
+  line-height: 20px;
+}
+
+
+/* Footer */
+.footer {
+  background: linear-gradient(to right, #000428, #004e92); /* Attractive gradient */
+  color: #ffffff;
+  padding: 2rem 0;
+}
+
+.footer h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer a {
+  color: #ffdd00; /* Bright accent for links */
+  transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  color: #ffffff; /* Hover effect for links */
+  text-decoration: underline;
+}
+
+.footer .list-inline {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer .list-inline-item {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer .list-inline-item a {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.footer .list-inline-item a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer h5 {
+    margin-bottom: 1rem;
+  }
+
+  .footer .list-inline {
+    margin-top: 1rem;
+  }
+
+  .footer .list-inline-item {
+    margin: 5px 0;
+  }
+}
+
+/* Product Listing Page */
+.product-listing {
+  padding: 20px 0;
+}
+
+.product-listing .row {
+  gap: 20px;
+}
+
+/* Single Product Card */
+.product-card {
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #f9f9f9;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.product-discount {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.product-reviews {
+  font-size: 0.85rem;
+}
+
+.add-to-cart-btn,
+.details-btn {
+  width: 48%;
+}
+
+.add-to-cart-btn {
+  background-color: #0077b6;
+  border-color: #0077b6;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #005f8e;
+  border-color: #005f8e;
+}
+
+.details-btn {
+  color: #0077b6;
+  border-color: #0077b6;
+}
+
+.details-btn:hover {
+  background-color: #f9f9f9;
+  color: #005f8e;
+  border-color: #005f8e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card {
+    margin-bottom: 20px;
+  }
+
+  .product-title {
+    font-size: 1rem;
+  }
+
+  .product-price {
+    font-size: 1rem;
+  }
+
+  .product-discount,
+  .product-reviews {
+    font-size: 0.8rem;
+  }
+
+  .add-to-cart-btn,
+  .details-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Product Details */
+.product-detail {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.product-card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-section {
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.details-section {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.product-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0077b6;
+}
+
+.category-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #023e8a;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.discount {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.qr-link img {
+  border: 2px solid #0077b6;
+  border-radius: 8px;
+}
+
+.reviews h2 {
+  font-size: 1.5rem;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.review-item {
+  margin-bottom: 20px;
+}
+
+.review-item .rating {
+  font-weight: bold;
+  color: #0077b6;
+}
+
+.review-item .comment {
+  font-size: 1rem;
+  color: #555;
+}
+
+.review-item .date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    flex-direction: column;
+  }
+
+  .image-section img {
+    max-width: 80%;
+  }
+
+  .details-section {
+    text-align: center;
+  }
+
+  .reviews h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Header Styling */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* Button Group Styling */
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.buttonGroup .btn {
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-btn {
+  background-color: #ffffff;
+  color: #007bff;
+  border: none;
+}
+
+.contact-btn:hover {
+  background-color: #f8f9fa;
+  color: #0056b3;
+  transform: scale(1.05);
+}
+
+.login-btn {
+  background-color: #ffffff;
+  color: #007bff;
+  border: none;
+}
+
+.login-btn:hover {
+  background-color: #f8f9fa;
+  color: #0056b3;
+  transform: scale(1.05);
+}
+
+.logout-btn {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.logout-btn:hover {
+  background-color: #ffffff;
+  color: #007bff;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .buttonGroup {
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .buttonGroup .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .header .logo {
+    font-size: 1.2rem;
+  }
+
+  .buttonGroup .btn {
+    font-size: 0.85rem

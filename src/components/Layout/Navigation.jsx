@@ -1,12 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Cookies from "js-cookie";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
-          Team Project
+          <FontAwesomeIcon icon={faHome} />
         </NavLink>
 
         <button
@@ -22,16 +25,19 @@ const Nav = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "active-link nav-link" : "nav-link"
-                }
-                to="/home"
-              >
-                Home
-              </NavLink>
-            </li>
+            {Cookies.get("accessToken") ? (
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active-link nav-link" : "nav-link"
+                  }
+                  to="/"
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+            ) : ''}
+
             <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
@@ -40,6 +46,16 @@ const Nav = () => {
                 to="/products"
               >
                 Products
+              </NavLink>
+            </li>
+            <li className="nav-item shoppingCart">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active-link nav-link" : "nav-link"
+                }
+                to="/"
+              >
+                <FontAwesomeIcon icon={faShoppingCart} />
               </NavLink>
             </li>
           </ul>

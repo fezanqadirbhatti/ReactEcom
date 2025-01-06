@@ -25,14 +25,11 @@ const Products = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="product-listing container mt-5">
       <div className="row">
         {products.map((product) => (
-          <div className="col-sm-6 col-md-4 mb-4" key={product.id}>
-            <Product
-              product={product}
-              handleAddToCart={handleAddToCart}
-            />
+          <div className="col-sm-6 col-md-4 col-lg-3 mb-4" key={product.id}>
+            <Product product={product} handleAddToCart={handleAddToCart} />
           </div>
         ))}
       </div>

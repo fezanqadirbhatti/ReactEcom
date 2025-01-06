@@ -39,25 +39,25 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="container mt-5">
-      <div className="card mb-4 shadow-sm">
+    <div className="product-detail container mt-5">
+      <div className="card product-card shadow-lg">
         <div className="row g-0">
-          <div className="col-md-4">
+          <div className="col-md-5 image-section">
             <img
               src={product.thumbnail}
               className="img-fluid rounded-start"
               alt={product.title}
             />
           </div>
-          <div className="col-md-8">
+          <div className="col-md-7 details-section">
             <div className="card-body">
-              <h5 className="card-title">{product.title}</h5>
-              <p className="card-text text-muted">
-                {product.category.toUpperCase()}
-              </p>
-              <p className="card-text">{product.description}</p>
-              <h6 className="text-success">${product.price.toFixed(2)}</h6>
-              <p className="text-danger">
+              <h1 className="product-title">{product.title}</h1>
+              <p className="category-label">{product.category.toUpperCase()}</p>
+              <p className="description">{product.description}</p>
+              <h2 className="price text-success">
+                ${product.price.toFixed(2)}
+              </h2>
+              <p className="discount text-danger">
                 Discount: {product.discountPercentage}%
               </p>
               <p>
@@ -85,8 +85,8 @@ const ProductDetail = () => {
               <p>
                 <strong>Weight:</strong> {product.weight || "N/A"} kg
               </p>
-              <div className="d-flex">
-                <p className="me-3">
+              <div className="d-flex align-items-center mt-3">
+                <p className="rating me-4">
                   <strong>Rating:</strong> {product.rating}
                 </p>
                 <p>
@@ -99,8 +99,9 @@ const ProductDetail = () => {
                     href={product.meta.qrCode}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="qr-link"
                   >
-                    <img src={product.meta.qrCode} alt="QR Code" width="100" />
+                    <img src={product.meta.qrCode} alt="QR Code" width="120" />
                   </a>
                 </div>
               )}
@@ -109,16 +110,18 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      <div className="mt-4">
-        <h4>Customer Reviews</h4>
+      <div className="reviews mt-5">
+        <h2>Customer Reviews</h2>
         {product.reviews?.length > 0 ? (
           <ul className="list-group">
             {product.reviews.map((review, index) => (
-              <li className="list-group-item" key={index}>
+              <li className="list-group-item review-item" key={index}>
                 <strong>{review.reviewerName}</strong> ({review.reviewerEmail})
-                <p>Rating: {review.rating}</p>
-                <p>{review.comment}</p>
-                <small>{new Date(review.date).toLocaleDateString()}</small>
+                <p className="rating">Rating: {review.rating}</p>
+                <p className="comment">{review.comment}</p>
+                <small className="date">
+                  {new Date(review.date).toLocaleDateString()}
+                </small>
               </li>
             ))}
           </ul>

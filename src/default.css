@@ -1,0 +1,121 @@
+/* Reset and Normalize CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Base font size for rem calculations */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #2c2c2c; /* Dark text for better readability */
+  background-color: #f0f9ff; /* Bright and cool blue background */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+a {
+  font-weight: 500;
+  color: #0077b6; /* Cool blue for links */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #023e8a; /* Darker blue for hover effect */
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #0077b6; /* Vibrant blue button */
+  color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+button:hover {
+  border-color: #023e8a;
+  background-color: #023e8a; /* Darker blue on hover */
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5em 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 1em 0;
+  line-height: 1.5;
+}
+
+ul, ol {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1em;
+  margin: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Accessibility Improvements */
+:focus {
+  outline: 3px solid #0077b6;
+  outline-offset: 2px;
+}
+
+/* Light Theme */
+@media (prefers-color-scheme: light) {
+  body {
+    color: #2c2c2c;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #00509e;
+  }
+  button {
+    background-color: #0077b6;
+    color: #ffffff;
+  }
+  button:hover {
+    background-color: #00509e;
+  }
+}
