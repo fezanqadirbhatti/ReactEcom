@@ -6,8 +6,10 @@
 }
 
 html {
-  font-size: 16px; /* Base font size for rem calculations */
-  scroll-behavior: smooth; /* Smooth scrolling */
+  font-size: 16px;
+  /* Base font size for rem calculations */
+  scroll-behavior: smooth;
+  /* Smooth scrolling */
 }
 
 body {
@@ -15,22 +17,28 @@ body {
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  color: #2c2c2c; /* Dark text for better readability */
-  background-color: #f0f9ff; /* Bright and cool blue background */
+  color: #2c2c2c;
+  /* Dark text for better readability */
+  background-color: #f0f9ff;
+  /* Bright and cool blue background */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
 }
 
 a {
   font-weight: 500;
-  color: #0077b6; /* Cool blue for links */
+  color: #0077b6;
+  /* Cool blue for links */
   text-decoration: none;
   transition: color 0.2s ease;
 }
+
 a:hover {
-  color: #023e8a; /* Darker blue for hover effect */
+  color: #023e8a;
+  /* Darker blue for hover effect */
 }
 
 button {
@@ -40,21 +48,30 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #0077b6; /* Vibrant blue button */
+  background-color: #0077b6;
+  /* Vibrant blue button */
   color: #ffffff;
   cursor: pointer;
   transition: border-color 0.25s, background-color 0.25s;
 }
+
 button:hover {
   border-color: #023e8a;
-  background-color: #023e8a; /* Darker blue on hover */
+  background-color: #023e8a;
+  /* Darker blue on hover */
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0 0 0.5em 0;
   font-weight: 600;
   line-height: 1.2;
@@ -65,7 +82,8 @@ p {
   line-height: 1.5;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 1.5em;
   margin-bottom: 1em;
 }
@@ -81,12 +99,15 @@ table {
   width: 100%;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 8px;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: inherit;
   font-size: 1em;
   margin: 0;
@@ -108,14 +129,32 @@ textarea {
     color: #2c2c2c;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #00509e;
   }
+
   button {
     background-color: #0077b6;
     color: #ffffff;
   }
+
   button:hover {
     background-color: #00509e;
   }
+}
+
+.active-link {
+  color: yellow;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #000;
+  text-decoration: none;
+  background-color: #f8f9fa;
+}
+
+.dropdown-item:hover {
+  background-color: #0d6efd;
+  color: #f8f9fa;
 }
