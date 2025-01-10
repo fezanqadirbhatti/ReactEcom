@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+
 import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
+import { ProuductsCategories } from "../Products/ProuductsCategories";
+import { SearchProducts } from "../Products/SearchProducts";
+
 const Nav = () => {
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
           <FontAwesomeIcon icon={faHome} />
         </NavLink>
-
+        <SearchProducts />
         <button
           className="navbar-toggler"
           type="button"
@@ -48,6 +53,7 @@ const Nav = () => {
                 Products
               </NavLink>
             </li>
+            <ProuductsCategories />
             <li className="nav-item shoppingCart">
               <NavLink
                 className={({ isActive }) =>
