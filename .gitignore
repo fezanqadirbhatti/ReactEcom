@@ -1,5 +1,5 @@
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,15 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Node modules and build directories
+node_modules/
+dist/
+dist-ssr/
+
+# Local environment files
 *.local
+.env
+.env.*local
 
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
@@ -23,5 +28,36 @@ dist-ssr
 *.sln
 *.sw?
 
-node_modules/
-.env
+# Operating system-specific files
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Docker temporary files and cache
+.dockerignore
+docker-compose.override.yml
+
+# Testing
+coverage/
+*.lcov
+jest-html-reporters-*.html
+
+# Debugging
+*.swp
+*.lock
+
+# Optional: Ignore specific package manager lock files
+# Uncomment the lines below if using only one package manager
+# yarn.lock
+# package-lock.json
+# pnpm-lock.yaml
+
+# Temporary build and cache directories
+.cache/
+.vite/
+.vscode-test/
+
+# Miscellaneous
+*.bak
+*.tmp
+*.old
